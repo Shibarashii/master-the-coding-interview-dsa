@@ -1,11 +1,11 @@
 def get_first_recurring_character(input: list):
 
-    occurence = {}
+    occurence = {}  # this can be set, since set are hash tables too: `occurence = set()`
     for ch in input:
         if ch in occurence:
             return ch
         else:
-            occurence[ch] = 1
+            occurence[ch] = 1  # if set(), simply: occurence.add(ch)
     return None
 
 
