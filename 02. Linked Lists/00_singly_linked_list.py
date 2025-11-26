@@ -76,6 +76,22 @@ class LinkedList:
 
         print(" -> ".join(values))
 
+    def reverse(self):
+        if not self.head.next:
+            return self.head
+
+        first = self.head
+        self.tail = self.head
+        second = first.next
+        while second:
+            temp = second.next
+            second.next = first
+            first = second
+            second = temp
+
+        self.head.next = None
+        self.head = first
+
     def __str__(self):
         return str(self.__dict__)
 
@@ -89,4 +105,6 @@ my_linked_list.remove(0)
 my_linked_list.append(25)  # c {16, None}
 my_linked_list.append(35)  # c {16, None}
 my_linked_list.print_list()
-print(my_linked_list.length)
+
+my_linked_list.reverse()
+my_linked_list.print_list()
