@@ -27,7 +27,7 @@ class LinkedList:
         self.length += 1
 
     def insert(self, index, value):
-        if self.length < index:
+        if self.length <= index:
             self.append(value)
             return
         if index == 0:
