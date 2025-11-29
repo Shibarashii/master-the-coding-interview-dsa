@@ -38,16 +38,12 @@ class Stack:
         self.length += 1
 
     def peek(self):
+        if not self.top:
+            return None
         return self.top.value
 
     def is_empty(self):
-        if not self.bottom:
-            return True
-        else:
-            return False
-
-    def is_full(self):
-        pass
+        return self.length == 0
 
 
 my_stack = Stack()
@@ -59,8 +55,7 @@ print(my_stack.pop())
 print(my_stack.pop())
 print(my_stack.pop())
 print(my_stack.pop())
-print(my_stack.pop())
-print(my_stack.pop())
 my_stack.push("hello")
+print(my_stack.peek())
 print(my_stack)
 print(my_stack.is_empty())
